@@ -1,0 +1,4 @@
+[build]
+  publish = "."
+
+# Multi-page static site — do not add a catch-all redirect to index.html
