@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // 3D Tilt Effect for Cards
 function initTiltEffect() {
-    const cards = document.querySelectorAll('.strategy-card, .risk-item, .tech-item');
+    const cards = document.querySelectorAll('.strategy-card, .risk-item, .tech-item, .division-card, .process-item, .sector-item');
     
     cards.forEach(card => {
         card.addEventListener('mousemove', (e) => {
