@@ -128,8 +128,13 @@ h1, h2, h3, h4 {
     transition: color 0.3s ease;
 }
 
-.nav-links a:not(.btn-nav):hover {
+.nav-links a:not(.btn-nav):hover,
+.nav-links a.active:not(.btn-nav) {
     color: var(--accent-primary);
+}
+
+.nav-links a.active:not(.btn-nav) {
+    font-weight: 600;
 }
 
 .btn-nav {
@@ -472,11 +477,89 @@ h1, h2, h3, h4 {
     gap: 0.75rem;
 }
 
-/* Division Banners */
-.division-section {
-    position: relative;
+/* Subpage Layout */
+.subpage .page-hero {
+    padding-top: 7rem;
+    min-height: auto;
 }
 
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: rgba(255,255,255,0.5);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.back-link:hover {
+    color: rgba(255,255,255,0.9);
+}
+
+.banner-stats {
+    margin-top: 2.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.banner-stats .stat-value {
+    background: linear-gradient(90deg, #93c5fd, #a5f3fc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.banner-stats .stat-label {
+    color: rgba(255,255,255,0.5);
+}
+
+.division-banner h1 {
+    font-size: 2.75rem;
+    color: white;
+    margin-bottom: 0.75rem;
+}
+
+/* Approach Grid (Home) */
+.approach-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.approach-item {
+    padding: 2.5rem 2rem;
+    background: white;
+    border: 1px solid var(--border-light);
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.04);
+    transition: transform 0.3s ease;
+}
+
+.approach-item:hover {
+    transform: translateY(-4px);
+}
+
+.approach-item i {
+    font-size: 1.75rem;
+    color: var(--accent-primary);
+    margin-bottom: 1.25rem;
+}
+
+.approach-item h3 {
+    font-size: 1.15rem;
+    margin-bottom: 0.75rem;
+}
+
+.approach-item p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+/* Division Banners */
 .division-banner {
     padding: 5rem 0 4rem;
     background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 50%, #1e293b 100%);
@@ -517,12 +600,6 @@ h1, h2, h3, h4 {
     text-transform: uppercase;
     color: rgba(255,255,255,0.5);
     margin-bottom: 1rem;
-}
-
-.division-banner h2 {
-    font-size: 2.75rem;
-    color: white;
-    margin-bottom: 0.75rem;
 }
 
 .division-banner p {
@@ -962,6 +1039,12 @@ h1, h2, h3, h4 {
     padding: 0.4rem 0.9rem;
     border-radius: 50px;
     letter-spacing: 0.03em;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+.contact-division-tag:hover {
+    opacity: 0.85;
 }
 
 .contact-division-tag.digital {
@@ -1055,6 +1138,16 @@ h1, h2, h3, h4 {
     gap: 0.75rem;
 }
 
+.footer-divisions a {
+    color: #94a3b8;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-divisions a:hover {
+    color: white;
+}
+
 .footer-dot {
     opacity: 0.4;
 }
@@ -1062,6 +1155,7 @@ h1, h2, h3, h4 {
 /* Responsive */
 @media (max-width: 1024px) {
     .divisions-grid { grid-template-columns: 1fr; }
+    .approach-grid { grid-template-columns: 1fr; }
     .sector-grid { grid-template-columns: repeat(2, 1fr); }
     .process-grid { grid-template-columns: repeat(2, 1fr); }
 }
